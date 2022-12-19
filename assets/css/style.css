@@ -27,6 +27,12 @@ p {
   font-family: "Mulish";
 }
 
+.landing-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .foot-item {
   text-decoration: none;
 }

@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="assets/css/default/app.min.css" rel="stylesheet" />
+    <link href="assets/sass/default/app.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/sass/style.css" rel="stylesheet" />
     <!-- ================== END core-css ================== -->
   </head>
   <body id="landing-body">    
@@ -23,9 +23,24 @@
                     <div class="col-lg-6">
                         <!-- youcode text-->
                         <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                            <div class="stepper-wrapper me-4 mt-4">
+                                <div class="stepper-item completed active">
+                                  <div class="step-counter"><i class="bi bi-card-text fs-3"></i></div>
+                                  <div class="step-name">RULES</div>
+                                </div>
+                                <div class="stepper-item active">
+                                  <div class="step-counter"><i class="bi bi-hourglass-split fs-3"></i></div>
+                                  <div class="step-name">TEST</div>
+                                </div>
+                                <div class="stepper-item active">
+                                  <div class="step-counter"><i class="bi bi-clipboard-fill fs-3"></i></div>
+                                  <div class="step-name">SCORE</div>
+                                </div>
+                              </div>
                             <h1 class="display-2 lh-1" style="color: rgb(82, 136, 230); margin-top: 5rem;">PHP Knowledge Test</h1>
                             <p class="lead fw-bolder fs-5" style="color: rgba(40, 40, 38, 0.872);">Welcome to PHP Knowledge Test, we have a bank of questions concerning php if you want to test your knowledge in them click the button Start.</p>
-                            <button type="button" class="btn btn-primary border rounded w-25">Start</button>
+                            <a href="./quizz.html" class="btn btn-primary border rounded w-25">Start</a>
+                            <button class="btn btn-warning border rounded w-25" data-bs-toggle="modal" data-bs-target="#modal-rules">Rules</button>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -49,6 +64,26 @@
                 </div>
             </div>
         </footer>
+        <!-- RULES MODAL -->
+<div class="modal fade" id="modal-rules">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #f1f2f3;">
+                <div class="modal-header d-flex justify-content-center" style="background-color: #f1f2f3; border: none;"></div>
+                <h1 class="text-center fw-bold">RULES</h1>
+                <div class="modal-body" id="view-body" style="background-color: #f1f2f3;">
+                    <p>- The contestant have to answer 10 Questions in PHP.</p>
+                    <p>- Each question has a time limit of 30 seconds before passing to the next one</p>
+                    <p>- With each correct question you get points.</p>
+                    <p>- Good Luck 😁😁</p>
+                </div>
+                <div class="modal-footer" style="background-color: #f1f2f3; border: none">
+                    <button type="button" class="btn btn-primary border rounded" data-bs-dismiss="modal">
+                        OK
+                    </button>
+        </div>
+    </div>
+</div>
+</div>
     </body>
     <!-- ================== BEGIN core-js ================== -->
     <!-- JavaScript Bundle with Popper -->

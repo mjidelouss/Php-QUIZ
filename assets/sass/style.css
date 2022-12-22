@@ -62,7 +62,7 @@ p {
   display: none;
 }
 
-.choice-container {
+.option-container {
   display: flex;
   margin-bottom: 0.5rem;
   width: 100%;
@@ -71,19 +71,19 @@ p {
   font-size: 1.2rem;
   min-width: 4rem;
 }
-.choice-container:hover {
+.option-container:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem 0 rgb(127, 127, 211);
   transform: scale(1.02);
   transform: transform 100ms;
 }
 
-.choice-prefix {
+.option-letter {
   padding: 1rem 1.1rem;
   color: white;
 }
 
-.choice-text {
+.option-text {
   padding: 1rem;
   width: 100%;
 }
@@ -96,17 +96,17 @@ p {
   background: linear-gradient(32deg, rgb(216, 78, 78), rgb(235, 61, 61) 100%);
 }
 
-#hud {
+#box {
   display: flex;
   justify-content: space-between;
 }
 
-.hud-prefix {
+.box-para {
   text-align: center;
   font-size: 1.1rem;
 }
 
-.hud-main-text {
+.box-text {
   text-align: center;
   color: rgb(145, 145, 198);
 }
@@ -206,7 +206,7 @@ p {
 }
 
 @media screen and (max-width: 768px) {
-  .choice-container {
+  .option-container {
     min-width: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */

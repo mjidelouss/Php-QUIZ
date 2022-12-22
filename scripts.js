@@ -38,16 +38,22 @@ function initTest() {
     startCountdown();
 }
 
+let intervalId;
+
 function startCountdown() {
+  // Check if a countdown is already in progress
+  if (intervalId) return;
+
   // Display the countdown in the page
   timer.innerText = countdown;
 
   // Decrement the countdown every 1000 milliseconds (1 second)
-  let intervalId = setInterval(() => {
+  intervalId = setInterval(() => {
     countdown--;
     timer.innerText = countdown;
     if (countdown <= 0) {
       clearInterval(intervalId);
+      intervalId = null;
       // Move on to the next question after the countdown ends
       goToNextQuestion();
     }
@@ -55,9 +61,18 @@ function startCountdown() {
 }
 
 function goToNextQuestion() {
-    countdown = 10;
+  if (questionCounter >= 10) 
+  {
+    // Display the final score to the user
+    alert(`Your final score is: ${score}`);
+    return;
+  }
+  countdown = 10;
   // Clear the countdown from the page
   timer.innerText = '';
+  questionCounter++;
+  progressBarFull.style.width = `${(questionCounter / 10) * 100}%`;
+  progressText.innerText = `Question ${questionCounter} / ${10}`;
   // Increment the question index and update the quiz with the new question
   questionIndex++;
   initTest();
@@ -65,6 +80,9 @@ function goToNextQuestion() {
 
 options.forEach(option => {
     option.addEventListener('click', e => {
+        // Clear the countdown timer
+        clearInterval(intervalId);
+        intervalId = null;
         const selectedoption = e.target;
         const correct = selectedoption.dataset.correct;
         console.log(option.dataset.correct)
@@ -93,7 +111,6 @@ options.forEach(option => {
                 }
             });
         }
-        
         setTimeout(() => {
             options.forEach(option => {
                 option.parentElement.classList.remove('correct');

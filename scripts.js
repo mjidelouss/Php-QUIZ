@@ -64,7 +64,8 @@ function goToNextQuestion() {
   if (questionCounter >= 10) 
   {
     // Display the final score to the user
-    alert(`Your final score is: ${score}`);
+    sessionStorage.setItem("score", score);
+    window.location.href = "score.html";
     return;
   }
   countdown = 10;

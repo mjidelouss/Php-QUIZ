@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PHP | TEST</title>
+    <!-- ================== BEGIN core-css ================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="assets/sass/default/app.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
+    <link href="assets/sass/style.css" rel="stylesheet" />
+    <!-- ================== END core-css ================== -->
+  </head>
+  <body id="landing-body">
+    <div class="stepper-wrapper mt-4">
+      <div class="stepper-item completed active">
+        <div class="step-counter"><i class="bi bi-card-text fs-3"></i></div>
+        <div class="step-name">RULES</div>
+      </div>
+      <div class="stepper-item completed active">
+        <div class="step-counter"><i class="bi bi-hourglass-split fs-3"></i></div>
+        <div class="step-name">TEST</div>
+      </div>
+      <div class="stepper-item completed active">
+        <div class="step-counter"><i class="bi bi-gift fs-3"></i></div>
+        <div class="step-name">SCORE</div>
+      </div>
+    </div>
+      <!-- SCORE CONTAINER -->
+      <div class="container d-flex justify-content-center mt-4">
+        <div class="text-center mt-3 bg-white p-5 rounded" style="width: 500px;" id="quizform">
+            <div class="" id="rulesId">
+                <div class="d-flex-block">
+                    <i class="bi bi-gift fs-1 text-info"></i>
+                    <h3 class="fw-bold text-info">SCORE</h3><hr>
+                </div>
+                <div class="box-item">
+                    <p class="box-para fw-bold">
+                      Score
+                    </p>
+                    <h1 class="box-text" id="score">0</h1>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      var score = sessionStorage.getItem("score");
+      document.getElementById("score").innerText = score;
+    </script>
+    </body>
+    <!-- ================== BEGIN core-js ================== -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./scripts.js"></script>
+    <script src="./data.js"></script>
+    <!-- ================== END core-js ================== -->
+</html>

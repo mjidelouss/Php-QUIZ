@@ -40,15 +40,23 @@
                 </div>
                 <div class="box-item d-flex mt-4">
                     <p class="box-para fw-bold">Score :</p>
-                    <h1 class="box-text ms-3" id="score">0</h1>
+                    <h1 class="box-text ms-3 mt-1" id="score">0</h1>
                   </div>
                   <div class="box-item d-flex">
                     <p class="box-para fw-bold">Correct Questions :</p>
-                    <h1 class="box-text ms-3" id="numCorrect">0</h1>
+                    <h1 class="box-text ms-3 mt-1" id="numCorrect">0</h1>
                   </div>
                   <div class="box-item d-flex">
                     <p class="box-para fw-bold">Incorrect Questions :</p>
-                    <h1 class="box-text ms-3" id="numIncorrect">0</h1>
+                    <h1 class="box-text ms-3 mt-1" id="numIncorrect">0</h1>
+                  </div>
+                  <div class="box-item d-flex">
+                    <p class="box-para fw-bold">Performence :</p>
+                    <h1 class="box-text ms-3 mt-1" id="performance">Good</h1>
+                  </div>
+                  <div class="d-flex justify-content-around mt-3">
+                    <a href="./index.html" class="btn btn-warning border rounded-pill w-25">Home</a>
+                    <a href="./quizz.html" class="btn btn-danger border rounded-pill w-25">Repeat</a>
                   </div>
             </div>
         </div>
@@ -57,9 +65,11 @@
       var score = sessionStorage.getItem("score");
       var correct = sessionStorage.getItem("correct");
       var incorrect = sessionStorage.getItem("incorrect");
+      var performance = sessionStorage.getItem("performance");
       document.getElementById("score").innerText = score;
       document.getElementById("numCorrect").innerText = correct;
       document.getElementById("numIncorrect").innerText = incorrect;
+      document.getElementById("performance").innerText = performance;
     </script>
     </body>
     <!-- ================== BEGIN core-js ================== -->

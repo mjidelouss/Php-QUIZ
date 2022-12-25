@@ -73,10 +73,18 @@ function goToNextQuestion() {
   // In case the questions reaches the maximum
   if (questionCounter >= MAX_QUESTIONS) 
   {
-    // Setting values in the storage to be used in another page
+    // Storing values in the storage to be used in another page
     sessionStorage.setItem("score", score);
     sessionStorage.setItem("correct", correctQuestionsCounter);
     sessionStorage.setItem("incorrect", incorrectQuestionsCounter);
+    if (correctQuestionsCounter < (MAX_QUESTIONS / 2))
+        sessionStorage.setItem("performance", "Bad");
+    if (correctQuestionsCounter == (MAX_QUESTIONS / 2))
+        sessionStorage.setItem("performance", "Average");
+    if (correctQuestionsCounter > (MAX_QUESTIONS / 2))
+        sessionStorage.setItem("performance", "Good");
+    if (correctQuestionsCounter == MAX_QUESTIONS)
+        sessionStorage.setItem("performance", "Perfect");
     // Sending the user to the score.html page
     window.location.href = "score.html";
     return;

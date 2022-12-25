@@ -30,10 +30,10 @@ const shuffledQuestions = shuffleArray(questions);
 function initTest() {
     // Setting the Questions from the array
     question.innerText = shuffledQuestions[questionIndex].question;
-    option1.innerText = shuffledQuestions[questionIndex].option1;
-    option2.innerText = shuffledQuestions[questionIndex].option2;
-    option3.innerText = shuffledQuestions[questionIndex].option3;
-    option4.innerText = shuffledQuestions[questionIndex].option4;
+    option1.innerText = shuffledQuestions[questionIndex].options[0];
+    option2.innerText = shuffledQuestions[questionIndex].options[1];
+    option3.innerText = shuffledQuestions[questionIndex].options[2];
+    option4.innerText = shuffledQuestions[questionIndex].options[3];
 
     // Set the data-correct attribute for each option element based on the correct answer
     option1.dataset.correct = shuffledQuestions[questionIndex].answer === 1;
@@ -94,7 +94,7 @@ function goToNextQuestion() {
   timer.innerText = '';
   // Updating the Prograss Bar
   progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
-  progressText.innerText = `Question ${questionCounter} / ${MAX_QUESTIONS}`;
+  progressText.innerText = `Question ❔ ${questionCounter} / ${MAX_QUESTIONS}`;
   // Increment the question index and update the quiz with the new question
   questionIndex++;
   initTest();
@@ -111,7 +111,7 @@ options.forEach(option => {
 
         // Updating the progress bar when the user clicks on an option
         progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
-        progressText.innerText = `Question ${questionCounter} / ${MAX_QUESTIONS}`;
+        progressText.innerText = `Question ❔ ${questionCounter} / ${MAX_QUESTIONS}`;
 
         // In case the option is correct
         if (correct === 'true') {

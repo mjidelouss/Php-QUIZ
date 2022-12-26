@@ -87,6 +87,8 @@ p {
 .option-text {
   padding: 1rem;
   width: 100%;
+  margin-top: -4.7rem;
+  margin-left: 2rem;
 }
 
 .correct {

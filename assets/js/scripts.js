@@ -30,18 +30,23 @@ const shuffledQuestions = shuffleArray(questions);
 function initTest() {
     // Setting the Questions from the array
     question.innerText = shuffledQuestions[questionIndex].question;
-    option1.innerText = shuffledQuestions[questionIndex].options[0];
-    option2.innerText = shuffledQuestions[questionIndex].options[1];
-    option3.innerText = shuffledQuestions[questionIndex].options[2];
-    option4.innerText = shuffledQuestions[questionIndex].options[3];
-
-    // Set the data-correct attribute for each option element based on the correct answer
-    option1.dataset.correct = shuffledQuestions[questionIndex].answer === 1;
-    option2.dataset.correct = shuffledQuestions[questionIndex].answer === 2;
-    option3.dataset.correct = shuffledQuestions[questionIndex].answer === 3;
-    option4.dataset.correct = shuffledQuestions[questionIndex].answer === 4;
+    options.forEach((option, index) => {
+      // Set the text and data-correct attribute for each option element
+      option.innerText = shuffledQuestions[questionIndex].options[index];
+      option.dataset.correct = shuffledQuestions[questionIndex].answer === (index + 1);
+    //   option.style.display = 'none'; // hide the option element by default
+      option.parentElement.style.display = 'none'; // hide the parent element by default
+    });
+    // Show the options and their parent elements that are needed for the current question
+    shuffledQuestions[questionIndex].options.forEach((option, index) => {
+      options[index].innerText = option;
+    //   options[index].style.display = 'block';
+      options[index].parentElement.style.display = 'block';
+    });
     startCountdown();
 }
+  
+  
 
 let intervalId;
 

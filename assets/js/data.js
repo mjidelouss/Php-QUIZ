@@ -11,6 +11,14 @@ export const questions = [
     answer: 1
   },
   {
+    question: "Parent constructors are not called implicitly if the child class defines a constructor?",
+    options: [
+      "True", 
+      "False", 
+    ],
+    answer: 1
+  },
+  {
     question: "Les fichiers PHP ont l’extension …. ?",
     options: [ 
       ".html", 

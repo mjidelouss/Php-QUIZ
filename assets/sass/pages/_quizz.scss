@@ -1,0 +1,51 @@
+@import '../abstracts/mixin';
+
+.option-container {
+	display: flex;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	border-radius: 2px;
+	background: rgb(145, 145, 198);
+	font-size: 1.2rem;
+	min-width: 4rem;
+	height: 3.4rem;
+	&:hover {
+		cursor: pointer;
+		box-shadow: 0 0.4rem 1.4rem 0 rgb(127, 127, 211);
+		transform: scale(1.02);
+		transform: transform 100ms;
+    }
+}
+.option-letter {
+	padding: 1rem 1.1rem;
+	color: white;
+}
+.option-text {
+	padding: 1rem;
+	width: 100%;
+	margin-top: -4.7rem;
+	margin-left: 2rem;
+}
+.correct {
+	background: linear-gradient(32deg, rgb(140, 209, 140), rgb(104, 194, 104) 100%);
+}
+.incorrect {
+	background: linear-gradient(32deg, rgb(216, 78, 78), rgb(235, 61, 61) 100%);
+}
+#box {
+	@include flexx(space-between);
+}
+.box-para {
+	text-align: center;
+	font-size: 1.5rem;
+}
+.box-text {
+	text-align: center;
+	color: rgb(145, 145, 198);
+}
+
+@media screen and (max-width: 768px) {
+	.option-container {
+		min-width: 2rem;
+	}
+}

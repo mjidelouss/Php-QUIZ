@@ -11,7 +11,7 @@ export const questions = [
     answer: 1
   },
   {
-    question: "Parent constructors are not called implicitly if the child class defines a constructor?",
+    question: "PHP est-il sensible à la casse?",
     options: [
       "True", 
       "False", 
@@ -45,6 +45,14 @@ export const questions = [
       "PHP 5", 
       "PHP 5.3", 
       "PHP 7.2"
+    ],
+    answer: 2
+  },
+  {
+    question: "S’il y a un problème de chargement du fichier, la fonction require() génère un warning, mais le script continue son exécution?",
+    options: [
+      "True", 
+      "False", 
     ],
     answer: 2
   },

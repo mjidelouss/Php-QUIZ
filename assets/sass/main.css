@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/*                                  Pages                                     */
+/* -------------------------------------------------------------------------- */
 #landing-body {
   min-height: 100vh;
   display: flex;
@@ -27,17 +30,6 @@ button:focus {
   outline: 0;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-  padding: 30px 0;
-  background-color: #a1c2e8;
-  grid-area: header;
-}
-
 h1 {
   font-weight: 600;
   line-height: 1.2;
@@ -50,16 +42,8 @@ p {
 
 .landing-img {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.foot-item {
-  text-decoration: none;
-}
-
-.hide {
-  display: none;
+  align-items: center;
 }
 
 .option-container {
@@ -114,21 +98,32 @@ p {
   color: rgb(145, 145, 198);
 }
 
-#progressBar {
-  width: 30rem;
-  height: 1.5rem;
-  border: 0.1rem solid rgb(37, 38, 39);
-  margin-top: 1rem;
-  border-radius: 40px;
-  overflow: hidden;
+@media screen and (max-width: 768px) {
+  .option-container {
+    min-width: 2rem;
+  }
+}
+/* -------------------------------------------------------------------------- */
+/*                                   Layout                                   */
+/* -------------------------------------------------------------------------- */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 30px 0;
+  background-color: #a1c2e8;
+  grid-area: header;
 }
 
-#progressBarFull {
-  height: 100%;
-  background: rgb(100, 208, 238);
-  width: 0%;
+.foot-item {
+  text-decoration: none;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                  Components                                */
+/* -------------------------------------------------------------------------- */
 .stepper-wrapper {
   margin-top: auto;
   display: flex;
@@ -208,8 +203,17 @@ p {
   content: none;
 }
 
-@media screen and (max-width: 768px) {
-  .option-container {
-    min-width: 2rem;
-  }
-}/*# sourceMappingURL=style.css.map */
+#progressBar {
+  width: 30rem;
+  height: 1.5rem;
+  border: 0.1rem solid rgb(37, 38, 39);
+  margin-top: 1rem;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+#progressBarFull {
+  height: 100%;
+  background: rgb(100, 208, 238);
+  width: 0%;
+}/*# sourceMappingURL=main.css.map */

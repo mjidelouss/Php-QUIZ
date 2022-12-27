@@ -2,10 +2,6 @@ import { questions } from "./data.js";
 // Declaring variables 
 const question = document.querySelector('#question');
 const options = Array.from(document.getElementsByClassName("option-text"));
-const option1 = document.querySelector('#option1');
-const option2 = document.querySelector('#option2');
-const option3 = document.querySelector('#option3');
-const option4 = document.querySelector('#option4');
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
@@ -14,7 +10,7 @@ const timer = document.querySelector('#timer');
 let score = 0;
 let questionIndex = 0;
 let questionCounter = 0;
-let countdown = 10;
+let countdown = 30;
 let correctQuestionsCounter = 0;
 let incorrectQuestionsCounter = 0;
 const MAX_QUESTIONS = questions.length;
@@ -34,13 +30,12 @@ function initTest() {
       // Set the text and data-correct attribute for each option element
       option.innerText = shuffledQuestions[questionIndex].options[index];
       option.dataset.correct = shuffledQuestions[questionIndex].answer === (index + 1);
-    //   option.style.display = 'none'; // hide the option element by default
-      option.parentElement.style.display = 'none'; // hide the parent element by default
+      // hide the option element by default
+      option.parentElement.style.display = 'none';
     });
     // Show the options and their parent elements that are needed for the current question
     shuffledQuestions[questionIndex].options.forEach((option, index) => {
       options[index].innerText = option;
-    //   options[index].style.display = 'block';
       options[index].parentElement.style.display = 'block';
     });
     startCountdown();
@@ -94,7 +89,7 @@ function goToNextQuestion() {
     window.location.href = "score.html";
     return;
   }
-  countdown = 10;
+  countdown = 30;
   // Clear the countdown from the page
   timer.innerText = '';
   // Updating the Prograss Bar
@@ -167,5 +162,5 @@ options.forEach(option => {
     });
 });
 
-// Initializing the Test
+// Starting the Test
 initTest();

@@ -1,0 +1,40 @@
+@import '../abstracts/mixin';
+
+#landing-body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column ;
+	background-color: rgb(237, 237, 237) 
+}
+#landing-section {
+	margin: auto
+}
+a {
+	color: #ffffff;
+	text-decoration: none;
+	transition: 0.5s;
+	&:hover {
+		color: #00c9c8;
+    }
+}
+textarea:focus,
+input:focus,
+select:focus,
+button:focus {
+	box-shadow: 0 0 0 0;
+	border: 0 none;
+	outline: 0;
+}
+
+h1 {
+	font-weight: 600;
+	line-height: 1.2;
+	font-family: "Newsreader";
+} 
+p {
+	font-family: "Mulish"
+}
+.landing-img {
+	@include flexx(center);
+	align-items: center; 
+}
